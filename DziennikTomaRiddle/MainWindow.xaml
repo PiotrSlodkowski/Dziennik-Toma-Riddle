@@ -1,0 +1,33 @@
+﻿<Window x:Class="DziennikTomaRiddle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:DziennikTomaRiddle"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Icon="Images\tom.jpg"
+        Title="Dziennik Toma Riddle'a" Height="600" Width="700">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images\tom.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label Margin="41,10,193,511" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC">Wybierz dzień, z którego wyświetlić wpis:</Label>
+        <Calendar x:Name="Calendar1" HorizontalAlignment="Left" Margin="41,59,0,0" VerticalAlignment="Top" Loaded="Calendar1_Loaded">
+        </Calendar>
+        <Button x:Name="Load" Margin="41,232,472,304" Click="Load_Click" >Alohomora!</Button>
+        <Button x:Name="Add" Margin="41,271,472,265" Click="Add_Click">Utwórz notatkę!</Button>
+        <Label Margin="41,346,249,169" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC">Zaklęcie na dziś:</Label>
+        <TextBox x:Name="Spell" Text="{Binding SpellOnToday}" HorizontalAlignment="Left" Margin="41,406,0,94" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" Opacity="0.8" Width="479"/>
+        <Label Margin="41,481,388,44" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC" >Twój nastrój w skali 1-5:</Label>
+        <ComboBox x:Name="Humor" HorizontalAlignment="Left" Margin="304,481,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="34">
+            <ComboBoxItem IsSelected="True" Content="5"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="1"/>
+        </ComboBox>
+        <Button x:Name="Rand" Margin="41,526,472,10" Click="Rand_Click">Losuj zaklęcie!</Button>
+    </Grid>
+</Window>

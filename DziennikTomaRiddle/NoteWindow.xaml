@@ -1,0 +1,25 @@
+﻿<Window x:Class="DziennikTomaRiddle.NoteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DziennikTomaRiddle"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Icon="Images\tom.jpg"
+        Title="Dziennik Toma Riddle'a - Wpis" Height="550" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images\tom.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label x:Name="Date" Content="{Binding Note.Date}" ContentStringFormat="dd.MM.yyyy" Margin="41,10,257,464" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC" />
+        <Label Margin="41,61,285,410" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC" Content="Treść wpisu:" />
+        <TextBox x:Name="Text" Text="{Binding Note.Text}"  Margin="41,116,36,275" TextWrapping="Wrap" AcceptsReturn="True" Opacity="0.8"/>
+        <Label Margin="41,271,217,200" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Viner Hand ITC">Zaklęcie na ten dzień:</Label>
+        <TextBox x:Name="Spell" Text="{Binding Note.Spell}"  Margin="41,320,36,123" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" Opacity="0.8"/>
+        <Button x:Name="Change" Margin="41,407,314,77" Click="Change_Click" RenderTransformOrigin="0.504,1.194">Zmień wpis</Button>
+        <Button x:Name="Delete" Margin="319,407,36,77" Click="Delete_Click" RenderTransformOrigin="0.518,-0.056" >Usuń wpis</Button>
+        <Button x:Name="Previous" Margin="10,474,345,10" Click="Previous_Click">Poprzedni wpis</Button>
+        <Button x:Name="Next" Margin="345,474,10,10" Click="Next_Click">Następny wpis</Button>
+    </Grid>
+</Window>
